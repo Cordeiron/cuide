@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Fredoka', ui-rounded, system-ui, sans-serif;
+    --font-body: 'Nunito', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  html,
+  body {
+    font-family: var(--font-body);
+    background-color: #FFFDF7;
+    color: #4A342E;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-nums {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+@keyframes eggWobble {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-5deg) scale(1.02, 0.98);
+  }
+  75% {
+    transform: rotate(5deg) scale(0.98, 1.02);
+  }
+}
+
+@keyframes eggShake {
+  0%, 100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  20% {
+    transform: translateX(-6px) rotate(-4deg);
+  }
+  40% {
+    transform: translateX(6px) rotate(4deg);
+  }
+  60% {
+    transform: translateX(-5px) rotate(-3deg);
+  }
+  80% {
+    transform: translateX(5px) rotate(3deg);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.88) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes rainDrop {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(140px);
+    opacity: 0;
+  }
+}
+
+@keyframes floatUpFade {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(0.9);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-48px) scale(1.1);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 3.4s ease-in-out infinite;
+}
+
+.animate-egg-wobble {
+  animation: eggWobble 1.6s ease-in-out infinite;
+}
+
+.animate-egg-shake {
+  animation: eggShake 0.36s ease-in-out infinite;
+}
+
+.animate-pop-in {
+  animation: popIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-rain-drop {
+  animation: rainDrop 0.85s linear infinite;
+}
+
+.animate-float-up {
+  animation: floatUpFade 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom subtle pastel dot background for arena */
+.bg-pastel-dots {
+  background-color: #FFFDF7;
+  background-image: radial-gradient(#F3E5D8 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+/* WhatsApp-inspired soft cream pattern */
+.bg-whatsapp-cream {
+  background-color: #EFEAE2;
+  background-image: radial-gradient(rgba(109, 76, 65, 0.08) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-egg-wobble,
+  .animate-egg-shake,
+  .animate-rain-drop {
+    animation: none !important;
+  }
+}
